@@ -1,28 +1,18 @@
-[build-system]
-requires = ["setuptools>=68", "wheel", "setuptools-scm>=8"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "otranscribe"
-dynamic = ["version"]
+version = "0.1.0"
 description = "Transcribe any audio or video via OpenAI STT. Supports diarisation and cleaned rendering."
 readme = "README.md"
 requires-python = ">=3.9"
 license = { file = "LICENSE" }
-authors = [ { name = "Ines Lino" } ]
+authors = [ { name = "YOUR_NAME" } ]
 dependencies = [
-  "requests>=2.31.0,<3",
+    # Pin the requests dependency to a safe major version range.  Restricting
+    # the upper bound helps mitigate supply‑chain risk by avoiding
+    # inadvertent upgrades to a new major version with breaking changes or
+    # vulnerabilities.  See https://semver.org/ for versioning practices.
+    "requests>=2.31.0,<3",
 ]
-
-[tool.setuptools_scm]
-tag_regex = "^v(?P<version>\\d+\\.\\d+\\.\\d+(?:rc\\d+)?)$"
-version_scheme = "release-branch-semver"
-local_scheme = "no-local-version"
-write_to = "src/otranscribe/_version.py"
-
-[project.urls]
-Homepage = "https://github.com/ineslino/otranscribe"
-Issues = "https://github.com/ineslino/otranscribe/issues"
 
 [project.scripts]
 otranscribe = "otranscribe.cli:main"
@@ -47,11 +37,10 @@ faster = [
 # tools needed to run the test suite.  Keep this list minimal to
 # avoid bloating end user installations.
 dev = [
-  "pytest>=7.0.0",
-  "black>=24.10.0",
-  "ruff>=0.6.9",
-  "pre-commit>=3.8.0",
-  "setuptools-scm>=8",
+    "pytest>=7.0.0",
+    "black>=24.10.0",
+    "ruff>=0.6.9",
+    "pre-commit>=3.8.0",
 ]
 
 [tool.pytest.ini_options]

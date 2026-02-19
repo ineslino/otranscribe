@@ -11,9 +11,4 @@ Usage as a library is not the primary goal; use the ``otranscribe`` CLI
 installed by this package.
 """
 
-try:
-    from ._version import version as __version__
-except Exception:  # pragma: no cover
-    __version__ = "0.0.0"
-
 __all__ = []

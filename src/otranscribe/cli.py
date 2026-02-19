@@ -254,16 +254,9 @@ def main() -> None:
     output.  Errors are written to stderr and result in a nonzero
     exit status.
     """
-    parser = build_parser()
+    args = build_parser().parse_args()
 
-    # Backward compatibility:
-    # If the user did not specify a subcommand, inject "transcribe" so
-    # `otranscribe -i file.m4v` works as expected.
-    argv = sys.argv[1:]
-    if argv and argv[0] not in {"doctor", "transcribe", "-h", "--help"}:
-        argv = ["transcribe"] + argv
-
-    args = parser.parse_args(argv)
+    # Backward compatibility: `otranscribe -i file` should act like `otranscribe transcribe -i file`
     if args.command is None:
         args.command = "transcribe"
 
@@ -366,8 +359,6 @@ def main() -> None:
         else Path(".otranscribe_cache")
     )
 
-    key: str | None = None  # prevent UnboundLocalError
-
     # Compute cache key if caching is enabled.
     api_result: Any | None = None
     if use_cache:
@@ -391,7 +382,6 @@ def main() -> None:
                 api_result = cached
         except Exception:
             api_result = None
-            key = None
 
     # If no cached result, perform transcription (with optional chunking)
     if api_result is None:
