@@ -105,7 +105,21 @@ On Windows (PowerShell):
 $env:OPENAI_API_KEY="sk-..."
 ```
 
-The local and faster engines (`--engine local` and `--engine faster`) do not require this variable.
+> The local and faster engines (`--engine local` and `--engine faster`) do not require this variable.
+
+## Hugging Face token (optional)
+
+Offline engines download models from Hugging Face Hub on first run. This works without authentication, but setting a token suppresses warnings and enables faster downloads:
+```bash
+export HF_TOKEN="hf_..."
+```
+
+On Windows (PowerShell):
+```powershell
+$env:HF_TOKEN="hf_..."
+```
+
+Get a free token at [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens).
 
 ## Uninstall
 

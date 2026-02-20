@@ -228,3 +228,15 @@ pip install -e . --force-reinstall --no-deps
 # Ubuntu: sudo apt-get install make
 # Windows: use WSL or run commands manually (see make targets in Makefile)
 ```
+
+### Hugging Face authentication warning
+
+When using offline engines (`--engine local` or `--engine faster`), you may see:
+```
+Warning: You are sending unauthenticated requests to the HF Hub.
+```
+
+This is harmless — models download without authentication. To suppress it and get faster downloads, create a free token at [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens) and set:
+```bash
+export HF_TOKEN="hf_..."
+```

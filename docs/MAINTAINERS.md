@@ -52,7 +52,7 @@ After the workflow runs:
 ## Release workflow
 
 Publishing is handled via GitHub Actions (tags). See:
-- `docs/PUBLISHING.md`
+- [PUBLISHING.md](./docs/PUBLISHING.md)
 
 ## Operational tips
 

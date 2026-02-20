@@ -24,9 +24,17 @@ See [INSTALLATION.md](./docs/INSTALLATION.md) for detailed setup including offli
   * **faster-whisper** (`--engine faster`) – uses the [faster-whisper](https://github.com/guillaumekln/faster-whisper) reimplementation based on CTranslate2. It is up to four times faster than the original open source Whisper implementation and uses less memory, with optional quantisation and GPU acceleration for even greater speed. Since diarisation is not available locally, the engine assigns all words to a single speaker (`Speaker 0`).
 - **Minimal dependencies** – uses `requests` instead of the heavy `openai` client when talking to the API. The local engine only imports Whisper if you choose `--engine local`. The faster engine pulls in the `faster-whisper` package only when selected.
 
+## CLI Reference
+```
+otranscribe transcribe -i <file> [--engine openai|local|faster] [--render final|raw] [-o output]
+otranscribe doctor [--engine openai|local|faster]
+```
+
+See [CLI.md](./docs/CLI.md) for all flags and options.
+
 ## Documentation
 
-- [**INSTALLATION.md**](./docs/INSTALLATION.md) – Install, uninstall, and API key setup
+- [**INSTALLATION.md**](./docs/INSTALL.md) – Install, uninstall, and API key setup
 - [**USAGE.md**](./docs/USAGE.md) – How to use `otranscribe`, examples, and common workflows
 - [**TROUBLESHOOTING.md**](./docs/TROUBLESHOOTING.md) – Common errors, diagnostics, and solutions
 - [**DEVELOPMENT.md**](./docs/DEVELOPMENT.md) – Development setup, testing, formatting, and linting
@@ -35,18 +43,15 @@ See [INSTALLATION.md](./docs/INSTALLATION.md) for detailed setup including offli
 
 ## Demo
 
-![Demo: installing otranscribe](demos/otranscribe-install.gif)
+### Clone & Install
 
-```bash
-git clone https://github.com/ineslino/otranscribe.git
-cd otranscribe
-python3 -m venv .venv
-source .venv/bin/activate   # Windows: .\.venv\Scripts\Activate.ps1
-pip install -U pip
-pip install -e .
-```
+<img src="demos/demo-1.gif" alt="Demo: Installing otranscribe" width="500">
 
-> See [INSTALL.md](docs/INSTALL.md) for detailed instructions, including PyPI install, offline engines, and platform-specific notes.
+### Dev Setup & Tests
+
+<img src="demos/demo-4.gif" alt="Demo: Dev Setup & Tests" width="500">
+
+> See [DEMOS.md](./docs/DEMOS.md) for more demos including Quick Start, Engine Comparison, and Doctor Diagnostics.
 
 ## Contributing
 

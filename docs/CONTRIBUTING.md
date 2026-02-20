@@ -29,7 +29,7 @@ Examples:
 
 ## Local development
 
-See [DEVELOPMENT.md](./DEVELOPMENT.md).
+See [DEVELOPMENT.md](./docs/DEVELOPMENT.md).
 
 ## Running checks
 
