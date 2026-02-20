@@ -34,8 +34,7 @@ See [INSTALLATION.md](./docs/INSTALLATION.md) for detailed setup including offli
 - [**PUBLISHING.md**](./docs/PUBLISHING.md) – Release workflow and PyPI publishing
 
 ## Demo
-<img width="3072" height="2070" alt="image" src="https://github.com/user-attachments/assets/ffd8b2d4-d735-4c20-af37-dc513bf6423f" />
-
+![Demo: installing otranscribe](demos/otranscribe-install.gif)
 
 ## Contributing
 
