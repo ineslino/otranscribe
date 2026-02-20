@@ -1,5 +1,5 @@
 # otranscribe
-<img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/b8db6265-3baf-44d5-9cee-3c4094cd9023" />
+<img width="250" height="150" alt="image" src="https://github.com/user-attachments/assets/b8db6265-3baf-44d5-9cee-3c4094cd9023" />
 
 `otranscribe` is a tiny command line interface for turning any audio or video into text. It primarily wraps the [OpenAI speech-to-text API](https://developers.openai.com/api/reference/resources/audio/subresources/transcriptions), but also includes two **offline** backends so you can avoid network calls and API costs entirely. The CLI handles all of the boilerplate: it extracts audio from arbitrary input, normalises it, runs the transcription on your chosen engine and optionally renders a cleaned transcript with timestamps and speaker labels.
 
