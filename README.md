@@ -34,7 +34,19 @@ See [INSTALLATION.md](./docs/INSTALLATION.md) for detailed setup including offli
 - [**PUBLISHING.md**](./docs/PUBLISHING.md) – Release workflow and PyPI publishing
 
 ## Demo
+
 ![Demo: installing otranscribe](demos/otranscribe-install.gif)
+
+```bash
+git clone https://github.com/ineslino/otranscribe.git
+cd otranscribe
+python3 -m venv .venv
+source .venv/bin/activate   # Windows: .\.venv\Scripts\Activate.ps1
+pip install -U pip
+pip install -e .
+```
+
+> See [INSTALL.md](docs/INSTALL.md) for detailed instructions, including PyPI install, offline engines, and platform-specific notes.
 
 ## Contributing
 
